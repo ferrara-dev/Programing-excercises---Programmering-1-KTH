@@ -1,0 +1,2 @@
+module övning1C {
+}
