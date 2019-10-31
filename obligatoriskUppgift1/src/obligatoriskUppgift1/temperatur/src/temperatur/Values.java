@@ -1,3 +1,20 @@
+/********************************************************
+                *** ATT GÖRA ***
+[x] Skriv ut resultatet i tabellform 
+[x] Kompletera koden så att maximum, minimum och medel
+    temperatur beräknas för enskild vecka samt perioden
+[]  Rita den vektor där de temperaturer som erhålls genom 
+    mätningarna lagras. Hur kommer man åt en viss uppgift
+    i denna vektor? Rita även de vektorer och variabler
+    där de erhållna resultaten lagras.
+[] Vilken strategi använder man för att bestämma den 
+   minsta temperaturen? Illustrera denna strategi: 
+   rita en serie bilder som visar hur man kommer fram 
+   till den minsta temperaturen.
+*********************************************************/
+
+
+
 package temperatur;
 
 import java.util.Locale;
@@ -39,10 +56,10 @@ public class Values {
 		// inmatningsverktyg
 		Scanner in = new Scanner(System.in);
 		in.useLocale(Locale.US);
-		// mata in uppgifter om antalet veckor och antalet m�tningar
+		// mata in uppgifter om antalet veckor och antalet mätningar
 		System.out.print("antalet veckor: ");
 		int antalVeckor = in.nextInt();
-		System.out.print("antalet m�tningar per vecka: ");
+		System.out.print("antalet mätningar per vecka: ");
 		int antalMatningarPerVecka = in.nextInt();
 		// plats att lagra temperaturer
 		double[][] t = new double[antalVeckor ][antalMatningarPerVecka ];
@@ -58,12 +75,12 @@ public class Values {
 
 		System.out.println();
 		System.out.println();
-		// den minsta, den st�rsta och medeltemperaturen � veckovis
+		// den minsta, den största och medeltemperaturen – veckovis
 		double[] minT = new double[antalVeckor];
 		double[] maxT = new double[antalVeckor];
 		double[] sumT = new double[antalVeckor];
 		double[] medelT = new double[antalVeckor];
-		// koden ska skrivas h�r
+		// koden ska skrivas här
 		for (int i = 0; i < t.length; i++) {
 			maxT[i] = t[i][0];
 			sumT[i] = t[i][0];
@@ -80,7 +97,7 @@ public class Values {
 			}
 			medelT[i] = (double) sumT[i] / (t[i].length);
 		}
-		// den minsta, den st�rsta och medeltemperaturen - hela m�tperioden
+		// den minsta, den största och medeltemperaturen - hela mätperioden
 		double minTemp = minT[0];
 		double maxTemp = maxT[0];
 		double sumTemp = sumT[0];
@@ -98,7 +115,7 @@ public class Values {
 
 			}
 		}
-		// koden ska skrivas h�r
+		// koden ska skrivas här
 		int count=0;
 		System.out.println("temperaturerna:");
 		
@@ -109,7 +126,7 @@ public class Values {
 		while (count != antalMatningarPerVecka)
 		{
 			count ++;
-			System.out.printf(" M�tning " + count + "  | ");
+			System.out.printf(" Mätning " + count + "  | ");
 			
 		}
 		System.out.printf( "  maxT     |" + "   minT     |"  +  "    medelT  " );
