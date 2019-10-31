@@ -12,50 +12,21 @@
    rita en serie bilder som visar hur man kommer fram 
    till den minsta temperaturen.
 *********************************************************/
-
-
-
 package temperatur;
 
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
+//import java.util.Scanner;
 
 public class Values {
 	static int antalMatningarPerVecka;
 	private static Scanner in = new Scanner(System.in);
-
-	/*public static void main(String[] args) {
-
-		int nrWeek = in.nextInt();
-		int nrTest = in.nextInt();
-		double w[][] = new double[nrWeek][nrTest];
-		for (int row = 0; row < nrWeek; pos++) {
-
-			for (int col = 0; testPos < nrTest; testPos++) {
-
-				w[pos][testPos] = in.nextDouble();
-
-			}
-
-		}
-
-		for (int pos = 0; pos < nrWeek; pos++) {
-
-			for (int testPos = 0; testPos < nrTest; testPos++) {
-
-				System.out.print(w[pos][testPos] + " ");
-
-			}
-			System.out.println();
-		}
-
-	}*/
 
 	public static void main(String[] args) {
 		System.out.println("TEMPERATURER\n");
 		// inmatningsverktyg
 		Scanner in = new Scanner(System.in);
 		in.useLocale(Locale.US);
+		
 		// mata in uppgifter om antalet veckor och antalet mätningar
 		System.out.print("antalet veckor: ");
 		int antalVeckor = in.nextInt();
@@ -65,11 +36,13 @@ public class Values {
 		double[][] t = new double[antalVeckor ][antalMatningarPerVecka ];
 		// mata in temperaturerna
 		for (int vecka = 0; vecka < antalVeckor; vecka++) {
-			System.out.println("temperaturer" + (vecka+1) + ":");
+			System.out.println("Vecka " + (vecka+1) + ":");
 			
-			for (int matning = 0; matning < antalMatningarPerVecka; matning++)
+			for (int matning = 0; matning < antalMatningarPerVecka; matning++) {
+				System.out.print("Mätning " + (matning+1) + ": ");
 				t[vecka][matning] = in.nextDouble();
-		}
+			}
+			}
 		System.out.println();
 	
 
@@ -157,4 +130,3 @@ public class Values {
 		
 	}
 }
-
