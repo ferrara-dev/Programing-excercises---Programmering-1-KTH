@@ -26,15 +26,21 @@ public class Values {
 		// inmatningsverktyg
 		Scanner in = new Scanner(System.in);
 		in.useLocale(Locale.US);
-		
-		// mata in uppgifter om antalet veckor och antalet mätningar
+	/****************************************************************************
+	    ** Uppgifter om antalet veckor och mätningar per vecka matas in **  
+	*****************************************************************************/
 		System.out.print("antalet veckor: ");
 		int antalVeckor = in.nextInt();
 		System.out.print("antalet mätningar per vecka: ");
 		int antalMatningarPerVecka = in.nextInt();
-		// plats att lagra temperaturer
+	/****************************************************************************
+	   	 ** Plats reserveras i minnet för lagring av temperaturer **  
+	*****************************************************************************/
 		double[][] t = new double[antalVeckor ][antalMatningarPerVecka ];
-		// mata in temperaturerna
+	
+	/******************************************************************************************
+	 ** Användren matar in temperaturer som kopieras från objekt .Scanner till vektorn t[][]**  
+	*******************************************************************************************/
 		for (int vecka = 0; vecka < antalVeckor; vecka++) {
 			System.out.println("Vecka " + (vecka+1) + ":");
 			
@@ -44,16 +50,16 @@ public class Values {
 			}
 			}
 		System.out.println();
-	
-
 		System.out.println();
 		System.out.println();
-		// den minsta, den största och medeltemperaturen – veckovis
+	/****************************************************************************
+	    ** Största, minsta och medeltemperaturen för varje vecka beräknas **  
+	*****************************************************************************/
 		double[] minT = new double[antalVeckor];
 		double[] maxT = new double[antalVeckor];
 		double[] sumT = new double[antalVeckor];
 		double[] medelT = new double[antalVeckor];
-		// koden ska skrivas här
+	
 		for (int i = 0; i < t.length; i++) {
 			maxT[i] = t[i][0];
 			sumT[i] = t[i][0];
@@ -70,7 +76,10 @@ public class Values {
 			}
 			medelT[i] = (double) sumT[i] / (t[i].length);
 		}
-		// den minsta, den största och medeltemperaturen - hela mätperioden
+		
+	/****************************************************************************
+	    ** Största, minsta och medeltemperaturen för hela perioden beräknas **  
+	*****************************************************************************/
 		double minTemp = minT[0];
 		double maxTemp = maxT[0];
 		double sumTemp = sumT[0];
@@ -88,7 +97,10 @@ public class Values {
 
 			}
 		}
-		// koden ska skrivas här
+		
+		/********************************
+		    ** Resultaten skrivs ut **
+		********************************/
 		int count=0;
 		System.out.println("temperaturerna:");
 		
