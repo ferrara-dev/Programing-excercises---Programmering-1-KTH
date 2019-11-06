@@ -3,11 +3,11 @@
 [x] Skriv ut resultatet i tabellform 
 [x] Kompletera koden så att maximum, minimum och medel
     temperatur beräknas för enskild vecka samt perioden
-[]  Rita den vektor där de temperaturer som erhålls genom 
+[x]  Rita den vektor där de temperaturer som erhålls genom 
     mätningarna lagras. Hur kommer man åt en viss uppgift
     i denna vektor? Rita även de vektorer och variabler
     där de erhållna resultaten lagras.
-[] Vilken strategi använder man för att bestämma den 
+[x] Vilken strategi använder man för att bestämma den 
    minsta temperaturen? Illustrera denna strategi: 
    rita en serie bilder som visar hur man kommer fram 
    till den minsta temperaturen.
