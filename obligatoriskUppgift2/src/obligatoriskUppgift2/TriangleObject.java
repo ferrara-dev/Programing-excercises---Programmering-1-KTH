@@ -10,7 +10,7 @@
   ta emot längderna av alla tre sidorna, och returnera antingen triangelns omkrets, dess area, en av triangelns medianer 
   eller bisektriser, eller något annat.
  **************************************************************************************************************************/
-package obligatorisk2;
+package triangelBerakningar;
 
 import static java.lang.Math.sqrt;
 
