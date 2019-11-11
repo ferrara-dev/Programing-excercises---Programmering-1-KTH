@@ -5,7 +5,9 @@ radien av den cirkel som är omskriven kring triangeln, samt radien av den cirke
 beräkningar ska passande metoder i klassen Triangel användas: man ska anropa den metod som bestämmer radien för den 
 omskrivna cirkeln och den metod som bestämmer radien för den inskrivna cirkeln.
 ************************************************************************************************************************/
-package obligatorisk2;
+
+package triangelBerakningar;
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.*;
@@ -111,7 +113,7 @@ public class EnTriangelOchDessCirklar
 					area();
 				
 				if(input.contentEquals("Calculate vertex coordinates"))
-					vertexCoordinates()
+					vertexCoordinates();
 				
 				if(input.contentEquals(CALCULATE_MEDIANS))
 					medians();
@@ -124,14 +126,16 @@ public class EnTriangelOchDessCirklar
 				}
 			}
 		}
+	}
 
 	/*************************************************************
-	 		* Set triangle parameters *
+	 			* Set triangle parameters *
 	 	- Set all of the triangle sides from user input
-	 	- calculates the vertex coordinates 
 	 *************************************************************/
 	public static void set3sides()
 	{
+		// Try-Catch statement som ser till att man användaren inte kan skriva in vilka längder som helst för triangeln,
+		// samt att inget annat än siffror anges
 	    try
 	    {
 		System.out.println("Please choose length of side a");
@@ -142,10 +146,10 @@ public class EnTriangelOchDessCirklar
 		System.out.println("Please choose length of side C");
 		double c = in.nextDouble();
 		System.out.println(c);
+		
 		// Triangel objektet som defineras av sidorna a,b,c instansieras
 		triangleObj = new TriangleObject(a, b, c);
 
-	
 		if((triangleObj.getSideA()+triangleObj.getSideB())<=triangleObj.getSideC() || (triangleObj.getSideA()+triangleObj.getSideC())<=triangleObj.getSideB() || (triangleObj.getSideB()+triangleObj.getSideC())<=triangleObj.getSideA())
 		{
 			System.out.println("The triangle does not exist, remember that the parameters must "
@@ -163,8 +167,8 @@ public class EnTriangelOchDessCirklar
 	}
 
 	/*************************************************************
-			*Print out vertex coordinates*
-	  Calls static method "getCoordinates()" from class triangle
+				*Print out vertex coordinates*
+	  Calls static method "getCoordinates()" from class lib
 	 *************************************************************/
 	static void vertexCoordinates()
 	{	
@@ -173,10 +177,10 @@ public class EnTriangelOchDessCirklar
 		System.out.println("Point B : " + TriangleObject. getCoordinates(triangleObj,Point.BB));
 		System.out.println("Point C : " + TriangleObject. getCoordinates(triangleObj,Point.CC));
 	}
+	
 	/**********************************************************
-		   * print out the triangle perimeter  *
+	 			* print out the triangle perimeter  *
 	 Calls static method "getPerimeter()" from class Triangle 
-
 	 **********************************************************/
 	static void perimeter()
 	{
@@ -185,7 +189,7 @@ public class EnTriangelOchDessCirklar
 	
 	/************************************************************
 	 		 * print out the triangle area *
-		Calls static method "getArea()" from class Triangle
+		Calls static method "getArea()" from class lib
 	 *************************************************************/
 	static void area()
 	{
@@ -195,11 +199,10 @@ public class EnTriangelOchDessCirklar
 		area = sqrt(s*(s-a1)*(s-b1)*(s-c1));
 		return area;*/
 	}
-	/********************************************************************************************
+	/*******************************************************
 				* print out triangle medians *
-	  	calls static method "medians"  that calculate triangle medians  in class TriangleObj
-			
-	 ********************************************************************************************/
+	  	  calls static method "medians"  from class lib
+	 ********************************************************/
 	static void medians()
 	{
 		System.out.println("Median A : " + TriangleObject.getMedian(triangleObj,Side.A));
@@ -213,17 +216,22 @@ public class EnTriangelOchDessCirklar
 		yCoG = (y1+y2+y3)/2;
 		return CoG;
 	}
-	
+	/**********************************************************
+	 			   * print out circumradius *
+		calls static getCircumRadius from class lib
+	 **********************************************************/
 	public static void circumRadius()
 	{
 		System.out.println("Circum radius is : " + TriangleObject.getCircumRadius(triangleObj));
 	}
-		
+	
+		/******************************************************
+		 			* print out triangle medians *
+			calls static method "medians"  from class lib
+		 *******************************************************/
 	public static void innerRadius()
 	{
 		System.out.println("Inner radius is : " + TriangleObject.getInnerRadius(triangleObj));
 	}
 
 }
-
- 
