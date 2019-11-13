@@ -1,7 +1,7 @@
 package obligatoriskUppgift3;
 import java.util.*;
 
-public class DenKortasteVagen
+public class HamtaKortasteVagen
 {
 	static Scanner in = new Scanner(System.in);
 	static TheShortestDistance längd = new TheShortestDistance ();
