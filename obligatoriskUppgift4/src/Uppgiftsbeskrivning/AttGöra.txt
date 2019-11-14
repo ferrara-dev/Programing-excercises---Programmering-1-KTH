@@ -1,16 +1,16 @@
-										  UPPGIFTER I SAMBAND MED PROBLEMET OCH LÖSNINGEN
-										  -----------------------------------------------
+		 UPPGIFTER I SAMBAND MED PROBLEMET OCH LÃ–SNINGEN
+		 -----------------------------------------------
 		
 		
-		[1] Skapa en algoritm som adderar två naturliga heltal, givna som teckensträngar. 
-			Åskådliggör den algoritmen: skapa en serie bilder som visar hur operationen fortgår. 
-			Beskriv algoritmen med motsvarande pseudokod. Implementera algoritmen i form av en Javametod.
+	[1] Skapa en algoritm som adderar tvÃ¥ naturliga heltal, givna som teckenstrÃ¤ngar. 
+	   Ã…skÃ¥dliggÃ¶r den algoritmen: skapa en serie bilder som visar hur operationen fortgÃ¥r. 
+	   Beskriv algoritmen med motsvarande pseudokod. Implementera algoritmen i form av en Javametod.
 			
-		[2] Skapa en algoritm som subtraherar två naturliga heltal, givna som teckensträngar.
-			Åskådliggör den algoritmen: skapa en serie bilder som visar hur operationen fortgår. 
-			Beskriv algoritmen med motsvarande pseudokod. Implementera algoritmen i form av en Javametod.
+	[2] Skapa en algoritm som subtraherar tvÃ¥ naturliga heltal, givna som teckenstrÃ¤ngar.
+	    Ã…skÃ¥dliggÃ¶r den algoritmen: skapa en serie bilder som visar hur operationen fortgÃ¥r. 
+	   Beskriv algoritmen med motsvarande pseudokod. Implementera algoritmen i form av en Javametod.
 			
-		[3] Komplettera programmet OperationerMedNaturligaHeltalGivnaSomTeckenstrangar så att det blir en meningsfull
-			enhet.
+	[3] Komplettera programmet OperationerMedNaturligaHeltalGivnaSomTeckenstrangar sÃ¥ att det blir en meningsfull
+	    enhet.
 			
-		[4] Om så önskas, arbeta även med multiplikation och division av naturliga heltal, givna som teckensträngar.
+	[4] Om sÃ¥ Ã¶nskas, arbeta Ã¤ven med multiplikation och division av naturliga heltal, givna som teckenstrÃ¤ngar.
