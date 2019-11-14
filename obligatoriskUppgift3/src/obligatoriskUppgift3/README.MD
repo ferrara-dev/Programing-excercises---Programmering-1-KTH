@@ -94,18 +94,14 @@ ________________________________________________________________________________
 		-------------------------------
 		Start ---> 	 shortestDist(m,a1,a2 ...,am,c1,c2,...cm,b11,b12..,b21,....bmn)
 			 		{
-		Step 1 ---> 	k = 1
+		Step 1 ---> 	k = 1, l = 1
 						d = a1 + b11 + c1
 						
-		Step 2 --->	 	for i = 2,3,...m
+		Step 2 --->	 	for i = 1,2,3,...m
 							for  j = 2,3...n
-			 				if ai + bi < d
-			 				k = i, d = ai + bi
-		
-		End  --->		return k
-		// Minneskomplexiteten för denna algoritm är m(n) = 2 => " Memorykomplexity for this algoritm is 2 "
-		// Denna alogritm har en mycket mindre minneskomplexitet och är därav den bättre av de två
-		
+			 				if ai + bij + cj < d
+			 				k = j, l=i, d = ai + bij + cj 
+		End  --->		k,d	
 _________________________________________________________________________________________________________________________________________		
 	
 	[4]  Skapa  ett  Javaprogram  som  kan  lösa  olika  instanser  av  det  här  problemet.
