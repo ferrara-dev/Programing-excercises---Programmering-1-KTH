@@ -35,7 +35,7 @@ ________________________________________________________________________________
 	[3] Hitta en minneseffektiv algoritm som löser det här problemet i ett allmänt fall – använd uppdateringsstrategi. Beskriv den
 		algoritmen på två olika sätt: med ord och med pseudokod.
 		
-	 													*** PROBLEM ***
+	 					*** PROBLEM ***
 	PROBLEMBESKRIVNING:
 	--------------------
 		Det ska bestämmas vilka mellanstationer man bör gå via för att 
@@ -48,7 +48,7 @@ ________________________________________________________________________________
 		- Det finns direkta vägar mellan stationen X och alla stationer i zonen Z2.
 		- Zonerna Z2 och Z3 är väl kopplade med varandra
 														
-														*** ALGORITM ***
+						*** ALGORITM ***
 	FÖRVILLKOR:
 	-----------
 		i z1 : x
