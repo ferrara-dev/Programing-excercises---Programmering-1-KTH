@@ -1,130 +1,7 @@
 package obligatoriskUppgift4;
-import static java.lang.System.out;
 
-import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 public class CalculationsWithStrings 
 {
-	static boolean bol = true;
-	public static String addera(String talA, String talB)
-	{
-		StringBuilder sBuilder =  new StringBuilder(); //En stringbuilder
-		int length = talA.length();
-		talB = matchLength(length, talB); //Skickar iväg andra strängen för att matcha längd
-		int carry = 0;
-		int i = 0;
-		
-		if(talB.length() > length) //Kollar om längden på second är längre än first.
-		{
-			length = talB.length();
-			talA = matchLength(length, talA); //Matchar längderna
-		}
-		
-		talA = new StringBuilder(talA).reverse().toString();  //Vänder på strängen för en enklare while-loop
-		talB = new StringBuilder(talB).reverse().toString(); //-||-
-		while(i < length || carry == 1) //Körs så länge i är mindre än längden och carry == 1
-		{
-			int temp; //Deklarerar en int för värdet som skall vara värdet av additionen
-			if(i < length)
-			{
-				//Adderar alla värden
-				temp = (talA.charAt(i) - 48) //Genom att ta karaktärens värde i ascii minus 48 får man "rätta" värdet
-						+ (talB.charAt(i) - 48) 
-						+ carry; //Lägger till carry 
-			}else
-			{
-				temp = carry; 
-			}
-
-			carry = 0;
-
-			if(temp > 9) //Om temp är större än tio behöver vi en carry
-			{
-				out.println(temp % 10);
-				carry = 1;
-				sBuilder.append(temp % 10);  //Modulus på temp med 10 och ger lägger till resten
-			}else
-			{
-				sBuilder.append(temp);
-			}
-			i++;
-		}
-		return new StringBuilder(sBuilder.toString()).reverse().toString(); //Vänder och returnerar strängen som byggdes
-	}
-	
-	
-	
-	
-	public static String subraction(String first, String second)
-	{
-		StringBuilder sBuilder = new StringBuilder(); //Stringbuilder
-		int length = first.length(); 
-		second = matchLength(length, second); //Matchar längder
-		int carry = 0;
-		int i = 0;
-		
-		if(second.length() > length)  //Om second är längre än first
-		{
-			length = second.length(); //Lägger length till second
-			first = matchLength(length, first); //Skicka iväg för matchas
-		}
-
-		for( int j = 0; j < length; j++)
-		{
-			if(first.charAt(i) < second.charAt(i))
-			{
-				bol = true;
-				String storeSecond = second;
-				second = first;
-				first = storeSecond;
-			}
-		}
-		
-		first = new StringBuilder(first).reverse().toString();  //Vänder på strängen för en enklare while-loop
-		second = new StringBuilder(second).reverse().toString(); //-||-
-		
-		
-		
-		while(i < length || carry == 1) //Körs så länge i är mindre än längden och carry == 1
-		{
-			
-			int temp; //Deklarerar en int för värdet som skall vara summan av subtraktionen
-			if(i < length)
-			{
-				//Subtraherar alla värden
-				temp = (first.charAt(i) - 48) //Genom att ta karaktärens värde i ascii minus 48 får man "rätta" värdet
-						- (second.charAt(i) - 48)
-						- carry; //Subtraherar carry
-			}
-			else
-			{
-				temp = carry;
-			}
-
-			carry = 0;
-
-			if(temp < 0) //Om temp är mindre än 0 behöver vi låna 10
-			{
-				carry = 1;
-				sBuilder.append(10 + temp); //Lägger till 10 på temp, får därefter rätt värde
-			}else
-			{
-				sBuilder.append(temp);
-			}
-			i++;
-		}
-		if(sBuilder.length() != 1) //Om längden är större än 1
-		{
-		if(sBuilder.charAt(sBuilder.length() - 1) == 48) //Kolla om sista karaktären är en 0a
-		{
-			sBuilder.deleteCharAt(sBuilder.length() - 1); //Tar bort denna
-		}
-		}
-		return new StringBuilder(sBuilder.toString()).reverse().toString(); //Vänder och returnerar strängen som byggdes
-	}
-	
 	public static String multiply(String first, String second) 
 	{ 
 	    int len1 = first.length(); 
@@ -197,46 +74,24 @@ public class CalculationsWithStrings
 	  
 	    return s; 
 	} 
-	
-	public static String matchLength(int length, String tal)
-	{
-		StringBuilder sBuilder = new StringBuilder(); //Stringbuilder
-		while(sBuilder.length() < (length - tal.length())) //Medan stringbuilders längd är mindre än längd - en av talens längder
-		{
-			sBuilder.append(0); //Lägg till 0or
-		}
-		sBuilder.append(tal); //Lägg till talet
-		return sBuilder.toString(); //Returnera strängen
-	}
-	
-	public static String add(String a, String b) {
-		
-		List<BigInteger> integers = Arrays.asList(new BigInteger(a), new BigInteger(b));
-		Collections.sort(integers);
-		Long sum = integers.stream()
-				  .mapToLong(BigInteger::longValue)
-				  .sum();
-		return sum.toString();
-	}
-	
-  
-	public static String addition2(String numA, String numB)
+
+	public static String addNaturalStringNumbers(String numA, String numB)
 	{
 		int carry = 0;
 		int lastIndexA = numA.length()-1;
 		int lastIndexB = numB.length()-1;
 		StringBuilder sum =  new StringBuilder(); 
 		int digit = 0;
+		
 		while(lastIndexA >= 0 && lastIndexB >= 0)
 		{
 			int digitSum = (numA.charAt(lastIndexA) - 48) //Genom att ta karaktärens värde i ascii minus 48 får man "rätta" värdet
 					+ (numB.charAt(lastIndexB) - 48) 
-					+ carry; //Lägger till carry ;
-			out.println(digitSum);
+					+ carry; //Lägger till carry
+			
 			digit = digitSum % 10;
 			carry = digitSum /10;
 			sum.append(digit);
-			out.println(sum.toString());
 			lastIndexA --;
 			lastIndexB --;
 		}
@@ -261,37 +116,30 @@ public class CalculationsWithStrings
 		}
 		if (carry != 0)
 			sum.append(carry);
-		return sum.reverse().toString(); //Vänder och returnerar strängen som byggdes
+		// Vänder och omvandlar Stringbuilder objektet till String innan det returneras				
+		return sum.reverse().toString(); 
+		
+		
+		
+		
 	}
 	
-	public static String minus(String numA, String numB)
+	public static String subtractNaturalStringNumbers(String numA, String numB)
 	{
+		StringBuilder dif =  new StringBuilder(); 
+		
+		 if (isSmaller(numA, numB)) 
+		    { 
+		        String t = numA; 
+		        numA = numB; 
+		        numB = t; 
+		    } 
+
 		int carry = 0;
 		int lastIndexA = numA.length()-1;
 		int lastIndexB = numB.length()-1;
-		StringBuilder dif =  new StringBuilder(); 
-		/*
-		int handleNeg = 0;
-		if((numA.length() - numB.length() ) < 0)
-		{
-			handleNeg = numB.length();
-		}
-		else if((numA.length() - numB.length() ) >= 0)
-		{
-			handleNeg = numA.length();
-		}
 		
-		for( int j = 0; j < handleNeg; j++)
-		{
-			if(numA.charAt(j) < numB.charAt(j))
-			{
-				String storeB = numB;
-				numB = numA;
-				numA = storeB;
-			}
-			else
-			bol = false; 
-		}*/
+		
 		while(lastIndexA >= 0 && lastIndexB >= 0)
 		{
 			int digitDif = (numA.charAt(lastIndexA) - 48) //Genom att ta karaktärens värde i ascii minus 48 får man "rätta" värdet
@@ -348,7 +196,37 @@ public class CalculationsWithStrings
 				dif.deleteCharAt(dif.length() - 1); //Tar bort denna
 			}
 		}
+			
+		// Ser till att det blir ett minustecken framför strängen om differensen är negativ
+		if (isSmaller(numB, numA)) 
+		{
+			dif.append("-");
+			return dif.reverse().toString(); //Vänder och returnerar strängen som byggdes
+		}
+		
 		return dif.reverse().toString(); //Vänder och returnerar strängen som byggdes
 	}
-}
 	
+	/*************************************************************************
+	     Metod som returnerar true om talet i numA är mindre än det i numB
+	 *************************************************************************/
+	static boolean isSmaller(String numA, String numB) 
+	{ 
+	    // Calculate lengths of both string 
+	    int nA = numA.length();
+	    int nB = numB.length(); 
+	    if (nA < nB) 
+	        return true; 
+	    
+	    if (nB < nA) 
+	        return false; 
+	      
+	    for (int i = 0; i < nA; i++) 
+	    if (numA.charAt(i) < numB.charAt(i)) 
+	        return true; 
+	    else if (numA.charAt(i) > numB.charAt(i)) 
+	        return false; 
+	  
+	    return false; 
+	} 
+}
