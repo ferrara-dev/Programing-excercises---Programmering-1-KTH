@@ -16,7 +16,6 @@ public class OperationerMedNaturligaHeltalGivnaSomTeckenstrangar
 		 out.println("Med metoder från klassen CalculationsWithStrings  " );
 		 out.println ("Summan av talen är :" + CalculationsWithStrings.addNaturalStringNumbers(tal1,tal2));
 		 out.println ("Differensen av talen är :" + CalculationsWithStrings.subtractNaturalStringNumbers(tal1, tal2));
-		// out.println("Produkten av de naturliga talen är : " +  CalculationsWithStrings.multiply(tal1, tal2));
 		 
 		 // Testa klassen som skapar objekt av klassen bigInteger
 		 out.println();
