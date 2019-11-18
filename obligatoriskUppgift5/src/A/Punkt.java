@@ -1,55 +1,134 @@
 package A;
 /*
-En punkt i planet har sitt namn och sina koordinater. Punktens koordinater ‰r hela tal.
-En punkt kan best‰mmas med ett namn och tvÂ heltalskoordinater. Det gÂr ‰ven att best‰mma en punkt utifrÂn en annan
-punkt ñ en kopia kan skapas.
-Man kan skapa en teckenstr‰ng som representerar en punkt. Denna teckenstr‰ng kan vara pÂ formen (A 3 4). En punkts
-namn och koordinater kan erhÂllas. Koordinaterna kan ‰ndras, en koordinat i taget. AvstÂndet mellan tvÂ givna punkter kan
-best‰mmas. Man kan kontrollera huruvida tvÂ givna punkter ‰r likadana eller inte.
+En punkt i planet har sitt namn och sina koordinater. Punktens koordinater √§r hela tal.
+En punkt kan best√§mmas med ett namn och tv√• heltalskoordinater. Det g√•r √§ven att best√§mma en punkt utifr√•n en annan
+punkt ‚Äì en kopia kan skapas.
+Man kan skapa en teckenstr√§ng som representerar en punkt. Denna teckenstr√§ng kan vara p√• formen (A 3 4). En punkts
+namn och koordinater kan erh√•llas. Koordinaterna kan √§ndras, en koordinat i taget. Avst√•ndet mellan tv√• givna punkter kan
+best√§mmas. Man kan kontrollera huruvida tv√• givna punkter √§r likadana eller inte.
 En modell av en punkt i planet ska skapas: man ska skapa en definitionsklass som heter Punkt. 
  */
+package obligatoriskUppgift5;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
+
+//from   w w  w . j  a v a 2s .  c o m
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+
+
 public class Punkt 
 {
-	static int x;
-	static int y;
-	static String namn;
-	
-	public Punkt(String namn, int x, int y) 
-	{
-		this.x= x;
-		this.y = y;
-		this.namn = namn;
-	}
-	public void setA(String aChar)
-	{
-		namn = aChar;
-	}
-	public String getNamn()
-	{
-		return namn;
-	}
-	public void setX(int x1)
-	{
-		x=x1;
-	}
-	
-	public int getX() 
-	{
-		return x;
-	}
+	private String name;
+	private int x;
+	private int y;
 
-	public void getY(int y1)
+
+	public Punkt(String name, int x, int y)
 	{
-		y=y1;
+		this.name = name;
+		this.x = x;
+		this.y = y;
+		
 	}
 	
-	public int getY() 
+	public Punkt(Punkt p1) {
+		this.name = p1.name;
+		this.x = p1.x;
+		this.y = p1.y;
+	}
+	
+
+	
+	public  void setNamn(String name)
+	{
+		this.name = name;
+	}
+	
+	public  String getNamn()
+	{
+		return name;
+	}
+	public void setY(int y)
+	{
+		this.y = y;
+	}
+	
+	public int getY()
 	{
 		return y;
 	}
-	
-	public double avstand(Punkt p2) 
+	public void setX(int x)
 	{
-		return 0;
+		this.x = x;
 	}
+	public int getX()
+	{
+		return x;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Punkt other = (Punkt) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (x != other.x)
+			return false;
+		if (y != other.y)
+			return false;
+		return true;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + x;
+		result = prime * result + y;
+		return result;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "(" + name + ", " + x + ", " + y + ")";
+	}
+
+	public double distance(Punkt p)
+	{
+		return Math.sqrt(Math.pow((x-p.x) ,2) + Math.pow((y-p.y), 2));
+	}
+	
+	public double distanceFromOrigo()
+	{
+		return distance(this);
+	}
+	
+	 public void draw(Graphics2D g) {
+		 g.drawString(getNamn(), getX()+1, getY()+1);
+         g.drawOval(getX(), getY(), 10, 10);
+     }
+	 
+	 
 }
+
