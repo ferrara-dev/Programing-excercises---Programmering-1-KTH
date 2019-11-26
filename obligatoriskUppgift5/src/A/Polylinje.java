@@ -211,8 +211,8 @@ public class Polylinje
 					    |		        	   | 
 					    |(3) [A]       [B]             |
 					    |       \     /   \            |
-					    |		 \   /     \	   |
-					    |		  [X]       [C]    |	
+					    |	     \   /     \	   |
+					    |	      [X]       [C]        |	
 					    +------------------------------+
 	* @param horn (Det nya hörnet)
 	* @param namn (Namnet på det hörn som den nya punkten ska placeras framför)
