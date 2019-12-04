@@ -1,7 +1,11 @@
 package frivilligUppgift1;
 
 public class HittaFelet_MinstaHeltal {
-	
+		static int minVal;
+	static int element[];
+	static int elementA [] = {17,22,11,21,31,2,-5,3,66,10,35,9,1,99,-10,100};
+	static int elementB[]  = {17,-32,11,21,31,2,-5,3,66,10,35,9,1,99,-10,-32,-33,88,55};
+		
 	public static void main(String[] args) 
 	{
 			      	printMin();
