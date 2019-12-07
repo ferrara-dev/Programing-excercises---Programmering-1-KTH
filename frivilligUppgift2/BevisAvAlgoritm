@@ -1,0 +1,61 @@
+                                           *** Bevis av algoritmens riktighet ***
+                                                        
+                                                        
+                                                      ** FÖRVILLKOR ** 
+          _________________________________________________________________________________________________________________
+          Det gäller att X = {x1,x2,...,xn} , där n är ett godtyckligt naturligt n >= 1
+          
+          Det finns något element i mängden X av godtyckligt index i, sådant att  1 <= i <= n. Xi betecknar det element
+          som finns på positionen i.
+          ________________________________________________________________________________________________________________
+          
+                                                    
+                                                    ** EFTERVILLKOR ** 
+          _________________________________________________________________________________________________________________
+          X är en sorterad mängd med minsta element på index i = 0.
+          Det gäller alltså att x1 < x2 < ... xn
+          
+          _________________________________________________________________________________________________________________
+          
+                                                     
+                                                     ** INRELOOPEN ** 
+          _________________________________________________________________________________________________________________
+          Innan den inre loope utförts gäller det att Xi = Minumum{xi, x(i+1), ... xn}
+          Följande invariant gäller för loopen:
+          x1 < x2 < ... x(i-1), x(i-1) < xk, där i <= k <= n.
+          
+          Anta att följande gäller i början av en ny iteration efter ett godtyckligt antal iterationer:
+          x1/ < x2/ < ... <x(i/-1)/ , x(i/-1)/ < xk / , där i/ <= k <= n
+
+          I slutet av denna iteration gäller då följande:
+          /x1 < /x2 < ... < /x(/i-1) < /xk
+          
+          /x(i/) = xi/ , /i = i/+1
+          
+          Ovanstående innebär i sin tur att:
+          /i - 1 = i/ -> /x(/i-1) = Xi/
+          Eftersom Xi/ = Minumum{x(i/)/, x(/i+1)/, ... xn/} och även att
+          /x(/i) = xi/  = Minumum{x(i/)/, x(/i+1)/, ... xn/} innebär det att också 
+          /x(/i-1) < xk, för /i <= k <= n (1)
+          De element som redan
+					 Elementen i första "delmängden" ändras inte under iterationen.
+					 Därför kan man anta att loopinvarianten även kan skrivas så här i början av
+					 passet:
+					         /X1 < /X2 < ... < /X(/i - 2) , /X(/i - 2) < /Xk för /i - 1 <= k <= n.
+					 Andra delen i påståendet gäller även då k = /i - 1, alltså:
+					         /X(/i - 2) < /X(/i -1)  ( Alltså är det föregående talet mindre än nästkommande) (2)
+					         
+					 Därmed ger påstende (1) & (2) allt som krävs för att bevisa:
+					         /X1 < /X2 < ... < /X(/i - 1) , /X(/i - 1) < /Xk för /i <= k <= n.
+					         
+					 Beviset är alltså meningsfullt först när i > 1 och osäkert då i = 1. Därefter
+					 blir dock loopinvarianten säkert i slutet av loopen och därmed i början av nästa
+					 och i sin tur i alla efterkommande iterationer.
+          
+          
+          
+          
+          
+          
+          _________________________________________________________________________________________________________________
+          
