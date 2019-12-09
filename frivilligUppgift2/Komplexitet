@@ -1,7 +1,7 @@
                                         *** Tidskomplexitet - Utbytessortering ***
            1. Tidskomplexiteten när det gäller antalet elementjämförelser är n(n-1)/2 = (n^2)/2 + n/2 
               För stora N tillhör alltså komplexitetsfunktionen O(n^2)
-           2. Tidskomplexiteten när det gäller antalet elementutbyten sker i bästa fall inget, vilket inträffar om listan redan är sorterad.
+           2. Tidskomplexiteten när det gäller antalet elementutbyten är i bästa fall 0, vilket inträffar om listan redan är sorterad.
               I värsta fall sker (n^2)/2 + n/2 elementjämförelser, vilket inträffar om listan är omvänt sorterad.
               Om sannolikheten för att ett utbyte sker än 0.5, är komplexitetsfunktionen i ett genomsnittligt fall (n^2)/4 + n/4 
               
