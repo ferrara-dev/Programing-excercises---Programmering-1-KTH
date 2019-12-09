@@ -10,5 +10,11 @@
           1.  Urvalssorteringen :
               * Antal elementjämföreslser : 
                 (n^2)/2 + n/2
+                Tillhör O(n^2)
               * Antal elementutbyten : 
-                - 
+                - I värsta fall n-1
+                - I bästa fall 0
+                - Genomsnittligt fall (n-1)/2 
+                - Tillhör O(n)
+                
+                
