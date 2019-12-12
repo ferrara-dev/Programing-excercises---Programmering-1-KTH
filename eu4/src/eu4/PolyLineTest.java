@@ -23,8 +23,9 @@ public class PolyLineTest
 
 	        Punkt[] PunktLista1 = {p1, p2, p3};
 	        Punkt[] PunktLista2 = {p11, p22, p33};
-	        NPolylinje nLine = new NPolylinje(PunktLista1);
-	        VPolylinje vLine = new VPolylinje(PunktLista2);
+		Polylinje nLine = new NPolylinje(PunktLista1);
+	        Polylinje vLine = new VPolylinje(PunktLista2);
+
 
 	        Punkt p4 = new Punkt("X", 4, 1);
 	        Punkt p5 = new Punkt("Y", 3, 2);
