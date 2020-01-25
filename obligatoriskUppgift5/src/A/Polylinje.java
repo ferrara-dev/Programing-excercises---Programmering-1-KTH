@@ -7,14 +7,16 @@ import java.util.Scanner;
 
 public class Polylinje 
 {
-
+	private Punkt[] horn;
+	private String farg = "svart";
+	private int bredd = 1;
 		//Iterator
 	public class PolylinjeIterator
 	{
 		private int aktuell = -1;
 		public PolylinjeIterator ()
 		{
-			if (Polylinje.this.horn.length > 0) aktuell = 0; 
+			if (this.horn.length > 0) aktuell = 0; 
 		}
 			
 		public boolean finnsHorn ()
@@ -22,16 +24,15 @@ public class Polylinje
 				return aktuell != -1; 
 		}
 			
-		public Punkt horn ()
-				throws java.util.NoSuchElementException
-					{
-						if (!this.finnsHorn ())
-							throw new java.util.NoSuchElementException ( "slut av iterationen");
-						
-					Punkt horn = Polylinje.this.horn[aktuell];
+		public Punkt horn () throws java.util.NoSuchElementException
+		{
+			if (!this.finnsHorn ()) {
+				throw new java.util.NoSuchElementException ( "slut av iterationen");
+			}		
+			Punkt horn = Polylinje.this.horn[aktuell];
 					
-					return horn; 
-					}
+			return horn; 
+		}
 			
 		public void gaFram ()
 		{
@@ -42,9 +43,7 @@ public class Polylinje
 		}
 	}
 	
-	private Punkt[] horn;
-	private String farg = "svart";
-	private int bredd = 1;
+
 
 	public Polylinje() 
 	{
